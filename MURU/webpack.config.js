@@ -6,14 +6,16 @@ const webpack = require("webpack");
 module.exports = {
   mode: "development",
   entry: {
-    main: "./src/index.js",
+    login: "./src/js/login.js",
     vendor: "./src/vendor/vendor.js",
   },
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HtmlWebpackPlugin({
       title: "Development",
-      template: "./src/index.html",
+      template: "./src/login.html",
+      chunks: ["login", "vendor"],
+      filename: "login.html",
     }),
     new webpack.ProvidePlugin({
       $: "jquery",
@@ -29,6 +31,20 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        use: ["html-loader"],
+      },
+      {
+        test: /\.(svg|png|jpg|gif)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[hash].[ext]",
+            outputPath: "imgs",
+          },
+        },
+      },
+      {
         test: /\.scss$/,
         use: [
           "style-loader", // inject CSS to page
@@ -37,5 +53,8 @@ module.exports = {
         ],
       },
     ],
+  },
+  devServer: {
+    port: 9001,
   },
 };
