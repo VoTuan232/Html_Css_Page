@@ -1,1 +1,1 @@
-console.log("xxxx");
+import "./scss/main.scss";

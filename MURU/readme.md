@@ -3,3 +3,5 @@
 - Tech:
   + CSS,HTML
   + WEBPACK
+
+-  Webpack Provide Plugin: Auto load libraries
