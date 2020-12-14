@@ -1,2 +1,25 @@
 @import "~bootstrap/scss/bootstrap";
-@import "custom.scss"
+@import "custom.scss";
+
+@font-face {
+  font-family: Avenir;
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.ttf") format('ttf');
+}
+
+@font-face {
+  font-family: AvenirBold;
+  src: url("../assets/fonts/AvenirNextLTPro-Heavy1.ttf");
+}
+
+@font-face {
+  font-family: AvenirProBold;
+  src: url("../assets/fonts/AvenirNextLTPro-Bold1.ttf");
+}
+
+body {
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+}
+
+.flex {
+  display: flex;
+}
