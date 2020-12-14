@@ -1,19 +1,19 @@
-@import "~bootstrap/scss/bootstrap";
 @import "custom.scss";
+@import "./bootstrap.scss";
 
 @font-face {
   font-family: Avenir;
-  src: url("../assets/fonts/AvenirNextLTPro-Regular.ttf") format('ttf');
+  src: url("~fonts/AvenirNextLTPro-Regular.ttf") format('truetype');
 }
 
 @font-face {
   font-family: AvenirBold;
-  src: url("../assets/fonts/AvenirNextLTPro-Heavy1.ttf");
+  src: url("~fonts/AvenirNextLTPro-Heavy1.ttf") format('truetype');
 }
 
 @font-face {
   font-family: AvenirProBold;
-  src: url("../assets/fonts/AvenirNextLTPro-Bold1.ttf");
+  src: url("~fonts/AvenirNextLTPro-Bold1.ttf") format('truetype');
 }
 
 body {

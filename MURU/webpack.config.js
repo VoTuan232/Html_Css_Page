@@ -16,6 +16,7 @@ if (!devMode) {
   plugins.push(
     new MiniCssExtractPlugin({
       filename: "css/[name].build.css",
+      // path: path.resolve(__dirname, "dist"),
       // chunkFilename: path.resolve(__dirname, "dist/css"),
     })
   );
@@ -69,21 +70,28 @@ module.exports = (env) => {
         },
         {
           test: /\.(svg|png|jpg|gif)$/,
+          include: path.resolve(__dirname, "./src/assets/images"),
           use: {
             loader: "file-loader",
             options: {
               name: "[name].[hash].[ext]",
-              outputPath: "imgs",
+              outputPath: "images/",
+              // publicPath: "../images",
+              // useRelativePaths: true,
             },
           },
         },
         {
           test: /\.(eot|svg|ttf|woff|woff2)$/,
+          include: path.resolve(__dirname, "./src/assets/fonts"),
           use: {
             loader: "file-loader",
             options: {
               name: "[name].[hash].[ext]",
-              outputPath: "fonts",
+              outputPath: "fonts/",
+              esModule: false,
+              publicPath: "../fonts",
+              useRelativePaths: true,
             },
           },
         },
@@ -113,6 +121,12 @@ module.exports = (env) => {
         //   use: [MiniCssExtractPlugin.loader, "css-loader"],
         // },
       ],
+    },
+    resolve: {
+      alias: {
+        fonts: path.resolve(__dirname, "src/assets/fonts"),
+        images: path.resolve(__dirname, "src/assets/images"),
+      },
     },
     devServer: {
       port: 9001,
