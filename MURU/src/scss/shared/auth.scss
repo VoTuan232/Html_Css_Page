@@ -1,0 +1,17 @@
+.auth-page {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 2fr 5fr;
+
+    &__header {
+        img {
+            width: 173.5px;
+            height: 81px;
+        }
+
+        p {
+            font-size: 30px;
+            font-family: Avenir;
+        }
+    }
+}
