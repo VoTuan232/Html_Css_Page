@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/44193436/gulp-js-automatically-upload-views-when-altered-saved
